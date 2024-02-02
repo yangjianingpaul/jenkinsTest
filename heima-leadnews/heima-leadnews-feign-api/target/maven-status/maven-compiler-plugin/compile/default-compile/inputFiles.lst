@@ -1,0 +1,4 @@
+/Users/yangjianing/IdeaProjects/heima-leadnews/heima-leadnews-feign-api/src/main/java/com/heima/apis/wemedia/IWemediaClient.java
+/Users/yangjianing/IdeaProjects/heima-leadnews/heima-leadnews-feign-api/src/main/java/com/heima/apis/article/IArticleClient.java
+/Users/yangjianing/IdeaProjects/heima-leadnews/heima-leadnews-feign-api/src/main/java/com/heima/apis/schedule/IScheduleClient.java
+/Users/yangjianing/IdeaProjects/heima-leadnews/heima-leadnews-feign-api/src/main/java/com/heima/apis/article/fallback/IArticleClientFallback.java

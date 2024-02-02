@@ -1,0 +1,66 @@
+package com.heima.wemedia.controller.v1;
+
+import com.heima.model.common.dtos.ResponseResult;
+import com.heima.model.wemedia.dtos.NewsAuthDto;
+import com.heima.model.wemedia.dtos.WmNewsDto;
+import com.heima.model.wemedia.dtos.WmNewsPageReqDto;
+import com.heima.wemedia.service.WmNewsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/v1/news")
+public class WmNewsController {
+
+    @Autowired
+    private WmNewsService wmNewsService;
+
+    @PostMapping("/list")
+    public ResponseResult findList(@RequestBody WmNewsPageReqDto dto) {
+        return wmNewsService.findList(dto);
+    }
+
+    @PostMapping("/submit")
+    public ResponseResult submitNews(@RequestBody WmNewsDto dto) {
+        return wmNewsService.submitNews(dto);
+    }
+
+    @PostMapping("/down_or_up")
+    public ResponseResult downOrUp(@RequestBody WmNewsDto dto) {
+        return wmNewsService.downOrUp(dto);
+    }
+
+
+    @GetMapping("/del_news/{id}")
+    public ResponseResult deleteNewsById(@PathVariable String id) {
+        int parseInt = Integer.parseInt(id);
+        return wmNewsService.deleteNewsById(parseInt);
+    }
+
+    @PostMapping("/list_vo")
+    public ResponseResult authArticleList(@RequestBody NewsAuthDto dto) {
+        return wmNewsService.authArticleList(dto);
+    }
+
+    @GetMapping("/one_vo/{id}")
+    public ResponseResult articleDetails(@PathVariable String id) {
+        Integer articleId = Integer.parseInt(id);
+        return wmNewsService.articleDetails(articleId);
+    }
+
+    @PostMapping("/auth_pass")
+    public ResponseResult articleAuthPass(@RequestBody NewsAuthDto dto) {
+        return wmNewsService.articleAuthPass(dto);
+    }
+
+    @PostMapping("/auth_fail")
+    public ResponseResult articleAuthFail(@RequestBody NewsAuthDto dto) {
+        return wmNewsService.articleAuthFail(dto);
+    }
+
+    @GetMapping("/one/{id}")
+    public ResponseResult getWemediaById(@PathVariable String id) {
+        int parseInt = Integer.parseInt(id);
+        return wmNewsService.getWemediaById(parseInt);
+    }
+}
