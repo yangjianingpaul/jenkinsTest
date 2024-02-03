@@ -41,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>leadnews-app-gateway</finalName>
+        <finalName>heima-leadnews-app-gateway</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
