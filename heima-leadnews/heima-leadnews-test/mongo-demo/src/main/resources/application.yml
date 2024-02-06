@@ -3,6 +3,6 @@ server:
 spring:
   data:
     mongodb:
-      host: 192.168.31.125
+      host: 192.168.5.157
       port: 27017
       database: leadnews-history

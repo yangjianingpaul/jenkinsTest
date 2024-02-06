@@ -21,7 +21,7 @@ public class MinIOTest {
         try {
             FileInputStream fileInputStream = new FileInputStream("/Users/yangjianing/Desktop/minio/plugins/js/index.js");
             MinioClient minioClient = MinioClient.builder().credentials("minio", "minio123")
-                    .endpoint("http://192.168.31.125:9000").build();
+                    .endpoint("http://192.168.5.157:9000").build();
 
             PutObjectArgs putObjectArgs = PutObjectArgs.builder()
                     .object("plugins/js/index.js")

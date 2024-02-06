@@ -4,7 +4,7 @@ spring:
   application:
     name: kafka-demo
   kafka:
-    bootstrap-servers: 192.168.31.125:9092
+    bootstrap-servers: 192.168.5.157:9092
     producer:
       retries: 10
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -14,5 +14,5 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 kafka:
-  hosts: 192.168.31.125:9092
+  hosts: 192.168.5.157:9092
   group: ${spring.application.name}

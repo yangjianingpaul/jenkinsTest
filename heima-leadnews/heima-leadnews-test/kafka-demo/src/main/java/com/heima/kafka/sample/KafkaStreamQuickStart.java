@@ -22,7 +22,7 @@ public class KafkaStreamQuickStart {
 
         //kafka configuration center
         Properties prop = new Properties();
-        prop.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.31.125:9092");
+        prop.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.5.157:9092");
         prop.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         prop.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         prop.put(StreamsConfig.APPLICATION_ID_CONFIG,"streams-quickstart");
