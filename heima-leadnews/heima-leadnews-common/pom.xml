@@ -137,7 +137,7 @@
         <dependency>
             <groupId>net.sourceforge.tess4j</groupId>
             <artifactId>tess4j</artifactId>
-            <version>4.1.1</version>
+            <version>5.5.0</version>
         </dependency>
 
         <dependency>
