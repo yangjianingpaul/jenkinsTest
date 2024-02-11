@@ -8,7 +8,7 @@ public class Application {
         Tesseract instance = new Tesseract();
         instance.setDatapath("/usr/share/tesseract-ocr/5/tessdata");
         instance.setLanguage("chi_sim");
-        File file = new File("/usr/local/tessdata/test.jpg");
+        File file = new File("/Users/paulyang/Desktop/test.png");
         String result = instance.doOCR(file);
         System.out.println(result);
     }
