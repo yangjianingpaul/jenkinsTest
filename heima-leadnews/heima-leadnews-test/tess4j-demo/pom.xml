@@ -23,7 +23,7 @@
     </dependencies>
 
     <build>
-        <finalName>tess4j</finalName>
+        <finalName>tess4j-demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
