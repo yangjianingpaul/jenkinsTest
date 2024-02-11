@@ -19,8 +19,8 @@ public class OCRController {
     @GetMapping("ocr")
     public ResponseEntity<String> performOCR(@RequestParam String url2) throws IOException, TesseractException {
         Tesseract instance = new Tesseract();
-        instance.setDatapath("/usr/share/tesseract-ocr/5/tessdata");
-        instance.setLanguage("chi_sim+eng");
+        instance.setDatapath("/Users/paulyang/Desktop/tessdata");
+        instance.setLanguage("chi_sim");
         URL url = new URL(url2);
         BufferedImage image = ImageIO.read(url);
         String result = instance.doOCR(image);
