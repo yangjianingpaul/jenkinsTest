@@ -1,7 +1,5 @@
 # 设置JAVA版本
 FROM openjdk:11.0-jre-buster
-RUN apt update
-RUN apt install tesseract-ocr
 # 指定存储卷, 任何向/tmp写入的信息都不会记录到容器存储层
 VOLUME /tmp
 # 拷贝运行JAR包
