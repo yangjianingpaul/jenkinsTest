@@ -6,6 +6,7 @@ public class ArticleConstants {
     public static final String DEFAULT_TAG = "__all__";
 
     public static final String ARTICLE_ES_SYNC_TOPIC = "article.es.sync.topic";
+    public static final String ARTICLE_ES_DELETE_TOPIC = "article.es.delete.topic";
 
     public static final Integer HOT_ARTICLE_LIKE_WEIGHT = 3;
     public static final Integer HOT_ARTICLE_COMMENT_WEIGHT = 5;

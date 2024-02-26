@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.heima.apis.article.IArticleClient;
+import com.heima.common.constants.ArticleConstants;
 import com.heima.common.constants.WemediaConstants;
 import com.heima.common.constants.WmNewsMessageConstants;
 import com.heima.common.exception.CustomException;
@@ -185,12 +186,21 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
             Long articleId = getById(id).getArticleId();
             String stringId = Long.toString(articleId);
             articleClient.deleteArticle(stringId);
+            deleteArticleESIndex(stringId);
         }
 
         wmNewsMaterialMapper.delete(Wrappers.<WmNewsMaterial>lambdaQuery()
                 .eq(WmNewsMaterial::getNewsId, id));
         removeById(id);
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
+    }
+
+    /**
+     * Send a message and delete an index
+     * @param documentId
+     */
+    private void deleteArticleESIndex(String documentId) {
+        kafkaTemplate.send(ArticleConstants.ARTICLE_ES_DELETE_TOPIC, documentId);
     }
 
     /**

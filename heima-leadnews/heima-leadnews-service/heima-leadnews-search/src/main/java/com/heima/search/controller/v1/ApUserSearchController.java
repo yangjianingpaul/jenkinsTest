@@ -1,5 +1,7 @@
 package com.heima.search.controller.v1;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.heima.model.common.dtos.ResponseResult;
 import com.heima.model.search.dtos.HistorySearchDto;
 import com.heima.search.service.ApUserSearchService;
@@ -29,11 +31,15 @@ public class ApUserSearchController {
     /**
      * delete search history
      *
-     * @param dto
+     * @param keyWordId
      * @return
      */
     @PostMapping("/del")
-    public ResponseResult delUserSearch(@RequestBody HistorySearchDto dto) {
+    public ResponseResult delUserSearch(@RequestBody String keyWordId) {
+        JSONObject jsonObject = JSON.parseObject(keyWordId);
+        String id = jsonObject.getString("id");
+        HistorySearchDto dto = new HistorySearchDto();
+        dto.setId(id);
         return apUserSearchService.delUserSearch(dto);
     }
 }
