@@ -39,12 +39,12 @@ public class ProducerQuickStart {
          * the third parameter：value of message
          */
 
-//        ProducerRecord<String,String> kvProducerRecord = new ProducerRecord<String,String>("topic-first","key-001","hello kafka");
-//        producer.send(kvProducerRecord);
-        for (int i = 0; i < 5; i++) {
-            ProducerRecord<String,String> kvProducerRecord = new ProducerRecord<String,String>("itcast-topic-input","hello kafka");
-            producer.send(kvProducerRecord);
-        }
+        ProducerRecord<String,String> kvProducerRecord = new ProducerRecord<String,String>("topic-first","key-001","hello kafka");
+        producer.send(kvProducerRecord);
+//        for (int i = 0; i < 5; i++) {
+//            ProducerRecord<String,String> kvProducerRecord = new ProducerRecord<String,String>("itcast-topic-input","hello kafka");
+//            producer.send(kvProducerRecord);
+//        }
 
 //        ProducerRecord<String,String> kvProducerRecord = new ProducerRecord<String,String>("topic-first","hello kafka");
         //send messages synchronously
